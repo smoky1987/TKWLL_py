@@ -1,0 +1,13 @@
+# Pentru a comenta/decomenta: ctrl + /
+# Pentru a copia: ctrl + c
+# Pentru a paste: ctrl + v
+# Pentru a selecta totul: ctrl + a
+# Pentru a da inapoi: ctrl + z
+# Pentru a face cut + copy: ctrl + x
+# Pentru a ne duce la cod sursa: ctrl + b
+# Pentru a duplica o linie: ctrl + d
+# Pentru a cauta intr-un singur fisier: ctrl + f
+# Pentru a cauta in toate fisierle: ctrl + shift + f
+# Pentru a cauta dupa denumirea fisierului: shift + shift
+# Pentru a schimba denumirea variabilei in singur fisier: ctrl + r
+# Pentru a schimba denumirea in toate fisierele: ctrl + shift + r
