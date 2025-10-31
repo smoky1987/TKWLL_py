@@ -9,6 +9,10 @@
 # Exercitiu 1
 # Creaţi o funcţie care adună 2 numere şi returnează rezultatul
 
+# def add(x,y):
+#     print(f"arguments are {x} and {y}")
+#     return x + y
+# print(add(1,2))
 
 # =====================================================================
 
@@ -17,6 +21,11 @@
 # Creaţi o funcţie care înmulțește 3 numere şi returnează rezultatul
 
 
+# def multiplai(x,y,z):
+#     print(f"arguments are {x} , {y} and {z}")
+#     return x * y * z
+# print(multiplai(1,2, 4))
+
 # =====================================================================
 
 
@@ -24,7 +33,14 @@
 # Creaţi o funcţie care primeşte un parametru - un număr, şi afişează la ecran,
 # dacă acest număr este mai mare, mai mic sau egal cu 5.
 
-
+# def checker(x):
+#     if x > 5 :
+#         return (f"valoarea mai mare ca 5 ")
+#     elif x < 5 :
+#         return (f"valoarea mai mic ca 5 ")
+#     else:
+#         return (f"valoarea este 5")
+# print(checker(5))
 
 # =====================================================================
 
@@ -33,15 +49,24 @@
 # Creaţi funcţia mediaNumere, care primeşte un parametru de tip listă,
 # şi returnează media numerelor din lista respectivă.
 
-
-
+# def med_Listei(x:list):
+#     return sum(x) / len(x)
+#
+# print(med_Listei([1,2,3,4,5]))
 # =====================================================================
 
 
 # Exercitiu 4
 # Scrieți o funcție Python care găseşte maximul a trei numere
 
-
+# def max_3(a,b,c):
+#     max = a
+#     for i in [a,b,c]:
+#         if i > max:
+#             max = i
+#     return max
+#
+# print(max_3(1,2,3))
 
 # =====================================================================
 
@@ -49,7 +74,13 @@
 # Exercitiu 5
 # Scrieți o funcție Python care să înmulțească toate numerele dintr-o listă şi să returneze rezultatul
 
-
+# def mul_all(lista):
+#     res = 1
+#     for i in lista:
+#         res *= i
+#     return res
+#
+# print(mul_all([1,2,6,9]))
 
 # =====================================================================
 
@@ -58,6 +89,12 @@
 # Creaţi funcţia myName, care primeşte parametrul nume(de tip String), şi afişează la ecran "Salut, <nume>",
 # dar înainte de aceasta transformă numele să fie scris cu prima literă mare.
 
+#
+# def call(nume):
+#     print(f"salut {nume.capitalize()}")
+#
+# call("Alexandr")
+# print(call("L"))
 
 
 # =====================================================================
@@ -66,7 +103,7 @@
 # Exercitiu 7
 # Scrieți o funcție Python care primeşte ca date de intrare un șir de caractere și calculează numărul de
 # litere majuscule și minuscule. Funcţia trebuie să returneze ambele rezultate
-"sir de caractere CARE este Fain"
+# "sir de caractere CARE este Fain"
 
 
 
@@ -82,12 +119,20 @@
 # =====================================================================
 
 # Exercitiu 9
-# Creați o funcție care primește ca argument un număr și returnează o listă cu divizorii numărului
-# respectiv.
+# Creați o funcție care primește ca argument un număr și returnează o listă cu
+# divizorii numărului respectiv.
 # Exemplu: Pentru numărul 10 rezultatul va fi [1, 2, 5, 10]
 
+def find_divisors(num):
+    divisors = []
+    for i in range(1, num+1):
+        if num % i == 0:
+            divisors.append(i)
+    return divisors
 
-
+print(find_divisors(8))
+print(find_divisors(90))
+print(find_divisors(789))
 # =====================================================================
 
 
@@ -100,21 +145,22 @@
 """
 # Exercitiu 10
 # Creează un dicționar de produse și prețuri, afișează numele produsului cu cel mai mare preț.
-# note = {"Ana": 6, "Marcu": 7, "Stefan": 10, "F": 9, "H": 3}
-# cheie_note = list(note.keys())
-# maximum = note[cheie_note[0]]
-# numele = cheie_note[0]
-#
-# for cheie in cheie_note:
-#     if note[cheie] > maximum:
-#         maximum = note[cheie]
-#         numele = cheie
-#
-# print(maximum, numele)
 
-# print(max(note, key=note.get))
-#
-# print(note[max(note, key=note.get)])
+def func_10(note):
+    cheie_note = list(note.keys())
+    maximum = note[cheie_note[0]]
+    numele = cheie_note[0]
+
+
+    for cheie in cheie_note:
+        if note[cheie] > maximum:
+            maximum = note[cheie]
+            numele = cheie
+    return maximum, numele
+note = {"Ana": 6, "Marcu": 7, "Stefan": 10, "F": 9, "H": 3}
+print(func_10(note))
+note = {"Ana": 10, "Marcu": 10, "Stefan": 10, "F": 10, "H": 8}
+print(func_10(note))
 
 # =====================================================================
 
@@ -220,13 +266,13 @@
 #     an_urmatorul += 1
 
 
-"""
-# =====================================================================
-
-# Exersare lambda
-
-# =====================================================================
-"""
+# """
+# # =====================================================================
+#
+# # Exersare lambda
+#
+# # =====================================================================
+# """
 
 # Să dublăm un număr:
 
@@ -239,31 +285,31 @@
 # =====================================================================
 
 # Sortarea unei liste de tuple după al doilea element:
-perechi = [(1, 'b'), (3, 'a'), (2, 'c')]
+# perechi = [(1, 'b'), (3, 'a'), (2, 'c')]
 
 
 # =====================================================================
 
 # Sortare după Lungimea Elementului într-o Listă de Șiruri
 
-cuvinte = ["banana", "mar", "portocala", "kiwi", "capsuna"]
+# cuvinte = ["banana", "mar", "portocala", "kiwi", "capsuna"]
 
 
 # =====================================================================
 
 # Sortare a unei Liste de Dictionare După un Anume Cheie
 
-produse = [
-    {"nume": "Telefon", "pret": 2000},
-    {"nume": "Laptop", "pret": 4000},
-    {"nume": "Tableta", "pret": 1500}
-]
+# produse = [
+#     {"nume": "Telefon", "pret": 2000},
+#     {"nume": "Laptop", "pret": 4000},
+#     {"nume": "Tableta", "pret": 1500}
+# ]
 
 
 # =====================================================================
 
 # Sortare după Multiple Chei: Mai Întâi după Primul Element, Apoi după Al Doilea Element
-scoruri = {"Alice": 5, "Bob": 8, "Clara": 3}
+#     scoruri = {"Alice": 5, "Bob": 8, "Clara": 3}
 
 
 # =====================================================================
@@ -273,29 +319,29 @@ scoruri = {"Alice": 5, "Bob": 8, "Clara": 3}
 # =====================================================================
 
 # Filtrarea elementelor impare dintr-o listă:
-numere = [1, 2, 3, 4, 5, 6]
+# numere = [1, 2, 3, 4, 5, 6]
 
 
 # =====================================================================
 
 # Transformarea elementelor dintr-o listă cu map:
-numere = [1, 2, 3]
+# numere = [1, 2, 3]
 
 
-"""
-# =====================================================================
-
-# Exercitiu aditional
-
-# =====================================================================
-"""
-"""
-    Scrieţi o funcţie care primeşte 3 parametri: nume, prenume, varsta, în această ordine, şi calculează 
-    care va fi preţul biletului de intrare la un muzeu pentru persoana respectivă, în modul următor:
-	•	biletul standard costă 100 lei
-	•	biletul pentru copii (până la 18 ani) costă 40 lei
-	•	biletul pentru persoanele a căror prenume începe cu litera "A" costă 90 lei, dacă au mai mult de 17 ani
-	Funcţia va returna preţul biletului calculat pentru fiecare persoană de o anumită vârstă.
-	Citiţi de la tastatură datele persoanei şi apelaţi funcţia definită. 
-"""
+# """
+# # =====================================================================
+#
+# # Exercitiu aditional
+#
+# # =====================================================================
+# """
+# """
+#     Scrieţi o funcţie care primeşte 3 parametri: nume, prenume, varsta, în această ordine, şi calculează
+#     care va fi preţul biletului de intrare la un muzeu pentru persoana respectivă, în modul următor:
+# 	•	biletul standard costă 100 lei
+# 	•	biletul pentru copii (până la 18 ani) costă 40 lei
+# 	•	biletul pentru persoanele a căror prenume începe cu litera "A" costă 90 lei, dacă au mai mult de 17 ani
+# 	Funcţia va returna preţul biletului calculat pentru fiecare persoană de o anumită vârstă.
+# 	Citiţi de la tastatură datele persoanei şi apelaţi funcţia definită.
+# """
 
