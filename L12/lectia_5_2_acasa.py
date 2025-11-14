@@ -5,12 +5,12 @@ Exemplu: task_1(1, 2, 3) ➞ 6
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_1(*nums):
-#     sum=0
-#     for num in nums:
-#         sum+=num
-#     return sum
-# print(task_1(2,4,6,8))
+def task_1(*nums):
+    sum=0
+    for num in nums:
+        sum+=num
+    return sum
+print(task_1(2,4,6,8))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -21,13 +21,13 @@ Exemplu: task_2(1, 2, 'a', 'b') ➞ [1, 2]
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_2(*vars):
-#     arr=[]
-#     for var in vars:
-#         if type(var) is int:
-#             arr.append(var)
-#     return arr
-# print(task_2(1, 2, 'a', 'b'))
+def task_2(*vars):
+    arr=[]
+    for var in vars:
+        if type(var) is int:
+            arr.append(var)
+    return arr
+print(task_2(1, 2, 'a', 'b'))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -37,30 +37,31 @@ Exemplu: task_3(1, 4, 5) ➞ 20
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_3(*prods):
-#     prod = 1
-#     for i in prods:
-#         prod = prod *i
-#     return prod
-# print(task_3(1,2,3,4))
-# print(task_3(1,4,5))
+def task_3(*prods):
+    prod = 1
+    for i in prods:
+        prod = prod *i
+    return prod
+print(task_3(1,2,3,4))
+print(task_3(1,4,5))
 # CODUL TĂU VINE MAI SUS:
 
 
 """
-Task: Creați o funcție cu numele `task_4` care primește un număr arbitrar de perechi cheie-valoare și 
-returnează un string care conține toate cheile și valorile concatenate separate de un spațiu.
+Task: Creați o funcție cu numele `task_4` care primește un număr arbitrar de perechi 
+cheie-valoare și returnează un string care conține toate cheile și 
+valorile concatenate separate de un spațiu.
 Exemplu: task_4(a=1, b=2, c=3) ➞ 'a 1 b 2 c 3'
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_4(**data):
-#     fin=""
-#     for k, v in data.items():
-#         fin =fin + f"{k} {v} "
-#     return fin
-#
-# print(task_4(a=1, b=2, c=3))
+def task_4(**data):
+    fin=""
+    for k, v in data.items():
+        fin =fin +' '+ str(k) +' '+ str(v)
+    return fin
+
+print(task_4(a=1, b=2, c=3))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -76,20 +77,20 @@ Exemplu: task_6(3, 1, 2, a=10, b=20, c='a', d='b') ➞ [1, 2, 3], ['c', 'd']
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_5(*data,**kvdata):
-#     l1=[]
-#     l2=[]
-#     for item in data:
-#         l1.append(item)
-#     for k2, v2 in kvdata.items():
-#         if isinstance(v2, str):
-#             l2.append(k2)
-#     return sorted(l1),l2
-#
-#
-# print(task_5(3, 1, 2, a=10, b=20))
-# print(task_5(3, 1, 2, a=10, b=20, c='a'))
-# print(task_5(3, 1, 2, a=10, b=20, c='a', d='b'))
+def task_5(*data,**kvdata):
+    l1=[]
+    l2=[]
+    for item in data:
+        l1.append(item)
+    for k2, v2 in kvdata.items():
+        if isinstance(v2, str):
+            l2.append(k2)
+    return sorted(l1),l2
+
+
+print(task_5(3, 1, 2, a=10, b=20))
+print(task_5(3, 1, 2, a=10, b=20, c='a'))
+print(task_5(3, 1, 2, a=10, b=20, c='a', d='b'))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -100,9 +101,9 @@ Exemplu: task_6(a=1, b=2, c=3) ➞ {'a': 1, 'b': 2, 'c': 3}
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_6(**data):
-#     return {k:v for k,v in data.items()}
-# print(task_6(a=1, b=2, c=3))
+def task_6(**data):
+    return {k:v for k,v in data.items()}
+print(task_6(a=1, b=2, c=3))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -116,16 +117,16 @@ Exemplu: task_7(1, 'a', 2, 'b') ➞ {'str': ['a', 'b'], 'int': [1, 2]}
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_7(*args):
-#     string = []
-#     intg = []
-#     for arg in args:
-#         if type(arg) is str:
-#             string.append(arg)
-#         if type(arg) is int:
-#             intg.append(arg)
-#     return {'str': string, 'int': intg}
-# print(task_7(1, 'a', 2, 'b'))
+def task_7(*args):
+    string = []
+    intg = []
+    for arg in args:
+        if type(arg) is str:
+            string.append(arg)
+        if type(arg) is int:
+            intg.append(arg)
+    return {'str': string, 'int': intg}
+print(task_7(1, 'a', 2, 'b'))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -139,16 +140,16 @@ Exemplu: task_8('madam', 'hello', 'level', 'world') ➞ {'palindrom': ['madam', 
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_8(*argumente):
-#     plndrm=[]
-#     non_plndrm=[]
-#     for item in argumente:
-#         if item[::-1]==item:
-#             plndrm.append(item)
-#         else:
-#             non_plndrm.append(item)
-#     return {'palindrom':plndrm, 'non_palindrom':non_plndrm}
-# print(task_8('madam', 'hello', 'level', 'world'))
+def task_8(*argumente):
+    plndrm=[]
+    non_plndrm=[]
+    for item in argumente:
+        if item[::-1]==item:
+            plndrm.append(item)
+        else:
+            non_plndrm.append(item)
+    return {'palindrom':plndrm, 'non_palindrom':non_plndrm}
+print(task_8('madam', 'hello', 'level', 'world'))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -160,34 +161,33 @@ Exemplu: task_9(1, 2, 3, 4, 5, number=2) ➞ [2, 4]
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_9(*args, **kwargs):
-#     fin=[]
-#     man_num = list(kwargs.values())
-#     for arg in range(1, len(args)+1):
-#         if arg % man_num[0]==0:
-#             fin.append(arg)
-#     return fin
-#
-# print(task_9(1, 2, 3, 4, 5,6,7,8, number=2))
+def task_9(*args, number):
+    fin=[]
+    for arg in range(1, len(args)+1):
+        if arg % number==0:
+            fin.append(arg)
+    return fin
+
+print(task_9(1, 2, 3, 4, 5, number=2))
 # CODUL TĂU VINE MAI SUS:
 
 
 """
-Task: Creați o funcție cu numele `task_10` care primește un număr variabil de argumente de tip integer și 
+Task: Creați o funcție cu numele `task_10` 
+care primește un număr variabil de argumente de tip integer și 
 un argument `number` de tip integer.
 Funcția va returna toate argumentele care sunt divizibile cu `number`.
 Exemplu: task_10(1, 2, 3, 4, 5, number=2) ➞ [2, 4]
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_10(*args, **kwargs):
-#     fin=[]
-#     item=list(kwargs.values())[0]
-#     for i in range(1, len(args)+1):
-#         if i%item==0:
-#             fin.append(i)
-#     return fin
-# print(task_10(1, 2, 3, 4, 5, number=2))
+def task_10(*args, number):
+    fin=[]
+    for i in range(1, len(args)+1):
+        if i%number==0:
+            fin.append(i)
+    return fin
+print(task_10(1, 2, 3, 4, 5, number=2))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -200,32 +200,32 @@ Exemplu: task_11(1, 1, 2, 3, 5, 9) ➞ False
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_11(*args):
-#     fibo=[]
-#
-#     a = 0
-#     b = 1
-#     for i in range(1, len(args)):
-#         if i < 0:
-#             print("Incorrect input")
-#         elif i == 0:
-#             return 0
-#         else:
-#             c=a+b
-#             fibo.append(c)
-#             a = b
-#             b = c
-#     fibo.insert(0,1)
-#
-#     if fibo == list(args):
-#         print(fibo,'  ',args)
-#         return True
-#     else:
-#         print(fibo, '  ', args)
-#         return False
-#
-# print(task_11(1, 1, 2, 3, 5, 8))
-# print(task_11(1, 1, 2, 3, 5, 9))
+def task_11(*args):
+    fibo=[]
+
+    a = 0
+    b = 1
+    for i in range(1, len(args)):
+        if i < 0:
+            print("Incorrect input")
+        elif i == 0:
+            return 0
+        else:
+            c=a+b
+            fibo.append(c)
+            a = b
+            b = c
+    fibo.insert(0,1)
+
+    if fibo == list(args):
+        print(fibo,'  ',args)
+        return True
+    else:
+        print(fibo, '  ', args)
+        return False
+
+print(task_11(1, 1, 2, 3, 5, 8))
+print(task_11(1, 1, 2, 3, 5, 9))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -238,17 +238,17 @@ Exemplu: task_12(1, 2, 3, 4) ➞ False
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_12(*data):
-#     for i in data:
-#         if i == 1 or i == 0:
-#             return False
-#         for j in range(2,i):
-#             if not i % j:
-#                 return False
-#         else:
-#             return True
-# print(task_12(2, 3, 5, 7))
-# print(task_12(1, 2, 3, 4))
+def task_12(*data):
+    for i in data:
+        if i == 1 or i == 0:
+            return False
+        for j in range(2,i):
+            if not j % i:
+                return False
+        else:
+            return True
+print(task_12(2, 3, 5, 7))
+print(task_12(1, 2, 3, 4))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -261,17 +261,17 @@ Exemplu: task_13('hello', 'world') ➞ False
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_13(*anagrame):
-#     intersection_two = set(list(anagrame[0])).intersection(set(list(anagrame[1])))
-#     if len(intersection_two) == len(anagrame[0]):
-#         print(True)
-#         return True
-#     else:
-#         print(False)
-#         return False
-# # CODUL TĂU VINE MAI SUS:
-# print(task_13('listen', 'silent'))
-# print(task_13('hello', 'world'))
+def task_13(*anagrame, comparableo):
+    for i in anagrame:
+        if sorted(i) == sorted(comparableo):
+            return True
+        else:
+            return False
+
+print(task_13('listen', 'silent', comparableo='silent'))
+print(task_13('hello', 'world',comparableo='dlrow'))
+# CODUL TĂU VINE MAI SUS:
+
 
 """
 Task: Creați o funcție cu numele `task_14` care primește un argument `sub_string` 
@@ -281,14 +281,14 @@ Exemplu: task_14('home', 'same', 'meme', sub_string="me") ➞ ['home', 'meme', '
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_14(*strng, sub_string=""):
-#     data=[]
-#     for i in strng:
-#         if sub_string in i:
-#             data.append(i)
-#     return data
-#
-# print(task_14('home', 'same', 'meme', sub_string="me"))
+def task_14(*strng, sub_string=""):
+    data=[]
+    for i in strng:
+        if sub_string in i:
+            data.append(i)
+    return data
+
+print(task_14('home', 'same', 'meme', sub_string="me"))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -303,17 +303,17 @@ Exemplu: task_15('home', 'same', 'meme', sub_string = 'me')
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_15(*strng, sub_string=""):
-#         contains=[]
-#         not_contains=[]
-#         for i in strng:
-#             if sub_string in i:
-#                 contains.append(i)
-#             else:
-#                 not_contains.count(i)
-#         return {"contains":contains,"not_contains":not_contains}
-#
-# print(task_15('home', 'same', 'meme', sub_string = 'me'))
+def task_15(*strng, sub_string):
+        contains=[]
+        not_contains=[]
+        for i in strng:
+            if sub_string in i:
+                contains.append(i)
+            else:
+                not_contains.count(i)
+        return {"contains":contains,"not_contains":not_contains}
+
+print(task_15('home', 'same', 'meme', sub_string = 'me'))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -328,33 +328,35 @@ Exemplu: task_16(2, 3, 4, 5, operation='div') ➞ 0.008333333333333333
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_16(*args, operation):
-#     if operation == 'add':
-#         return sum(args)
-#     elif operation == 'sub':
-#         return args[0] - sum(args[1:])
-#     elif operation == 'mul':
-#         res = 1
-#         for arg in args:
-#             res*= arg
-#         return res
-#     else:
-#         res = args[0]
-#         for arg in args[1:]:
-#             res/=arg
-#         return res
-#
-# print(task_16(2, 3, 4, 5, operation='add'))
-# print(task_16(2, 3, 4, 5, operation='sub'))
-# print(task_16(2, 3, 4, 5, operation='mul'))
-# print(task_16(2, 3, 4, 5, operation='div'))
+def task_16(*args, operation):
+    if operation == 'add':
+        return sum(args)
+    elif operation == 'sub':
+        return args[0] - sum(args[1:])
+    elif operation == 'mul':
+        res = 1
+        for arg in args:
+            res*= arg
+        return res
+    else:
+        res = args[0]
+        for arg in args[1:]:
+            res/=arg
+        return res
+
+print(task_16(2, 3, 4, 5, operation='add'))
+print(task_16(2, 3, 4, 5, operation='sub'))
+print(task_16(2, 3, 4, 5, operation='mul'))
+print(task_16(2, 3, 4, 5, operation='div'))
 
 # CODUL TĂU VINE MAI SUS:
 
 
 """
-Task: Creați o funcție cu numele `task_17` care primește un argument `number` după putea primi diferite argumente keyword precum `add`, `sub`, `mul`, `div` care vor fi liste cu numere.
-Funcția va returna rezultatul operației specificate de argumentul `operation` aplicată tuturor argumentelor. Mai multe operații pot fi aplicate. Ordinea operațiilor va fi în ordinea în care sunt specificate.
+Task: Creați o funcție cu numele `task_17` care primește un argument `number` 
+după putea primi diferite argumente keyword precum `add`, `sub`, `mul`, `div` care vor fi liste cu numere.
+Funcția va returna rezultatul operației specificate de argumentul `operation` aplicată tuturor argumentelor. 
+Mai multe operații pot fi aplicate. Ordinea operațiilor va fi în ordinea în care sunt specificate.
 Operațiile posibile sunt: `add`, `sub`, `mul`, `div`.
 Exemplu: task_17(2, add=[3, 4, 5]) ➞ 14
 Exemplu: task_17(2, sub=[3, 4, 5]) ➞ -10
@@ -364,25 +366,31 @@ Exemplu: task_17(2, add=[3, 4, 5], sub=[1, 2]) ➞ 11
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_17(nr, **kwargs):
-#     if kwargs.get('add'):
-#         return nr + sum(kwargs['add'])
-#     elif kwargs.get('sub'):
-#         return nr - sum(kwargs['sub'])
-#     elif kwargs.get('mul'):
-#         for i in kwargs['mul']:
-#             nr *= i
-#             return nr
-#     else:
-#          for i in kwargs['div']:
-#             nr /= i
-#             return nr
-#
-# print(task_17(2, add=[3, 4, 5]))
-# print(task_17(2, sub=[3, 4, 5]))
-# print(task_17(2, mul=[3, 4, 5]))
-# print(task_17(2, div=[3, 4, 5]))
-# print(task_17(2, add=[3, 4, 5], sub=[1, 2]))
+def task_17(number, **operations):
+    result = number
+    for oper, values in operations.items():
+        if oper == "add":
+            for v in values:
+                result += v
+        elif oper == "sub":
+            for v in values:
+                result -= v
+        elif oper == "mul":
+            for v in values:
+                result *= v
+        elif oper == "div":
+            for v in values:
+                result /= v
+        else:
+            return f'nothing else to run'
+    return result
+
+
+print(task_17(2, add=[3, 4, 5]))
+print(task_17(2, sub=[3, 4, 5]))
+print(task_17(2, mul=[3, 4, 5]))
+print(task_17(2, div=[3, 4, 5]))
+print(task_17(2, add=[3, 4, 5], sub=[1, 2]))
 # CODUL TĂU VINE MAI SUS:
 
 
@@ -392,14 +400,14 @@ Exemplu: task_18('hello', 'world') ➞ {'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 
 """
 
 # CODUL TĂU VINE MAI JOS:
-# def task_18(*strings):
-#     data = []
-#     # fin ={}
-#     for i in strings:
-#         data += list(i)
-#     fin= {i:data.count(i) for i in data}
-#     return fin
-# print(task_18('hello', 'world'))
+def task_18(*strings):
+    data = []
+    # fin ={}
+    for i in strings:
+        data += list(i)
+    fin= {i:data.count(i) for i in data}
+    return fin
+print(task_18('hello', 'world'))
 # CODUL TĂU VINE MAI SUS:
 
 

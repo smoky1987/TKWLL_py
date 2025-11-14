@@ -9,10 +9,10 @@
 # Exercitiu 1
 # Creaţi o funcţie care adună 2 numere şi returnează rezultatul
 
-# def add(x,y):
-#     print(f"arguments are {x} and {y}")
-#     return x + y
-# print(add(1,2))
+def add(x,y):
+    print(f"arguments are {x} and {y}")
+    return x + y
+print(add(1,2))
 
 # =====================================================================
 
@@ -21,10 +21,10 @@
 # Creaţi o funcţie care înmulțește 3 numere şi returnează rezultatul
 
 
-# def multiplai(x,y,z):
-#     print(f"arguments are {x} , {y} and {z}")
-#     return x * y * z
-# print(multiplai(1,2, 4))
+def multiplai(x,y,z):
+    print(f"arguments are {x} , {y} and {z}")
+    return x * y * z
+print(multiplai(1,2, 4))
 
 # =====================================================================
 
@@ -33,14 +33,14 @@
 # Creaţi o funcţie care primeşte un parametru - un număr, şi afişează la ecran,
 # dacă acest număr este mai mare, mai mic sau egal cu 5.
 
-# def checker(x):
-#     if x > 5 :
-#         return (f"valoarea mai mare ca 5 ")
-#     elif x < 5 :
-#         return (f"valoarea mai mic ca 5 ")
-#     else:
-#         return (f"valoarea este 5")
-# print(checker(5))
+def checker(x):
+    if x > 5 :
+        return (f"valoarea mai mare ca 5 ")
+    elif x < 5 :
+        return (f"valoarea mai mic ca 5 ")
+    else:
+        return (f"valoarea este 5")
+print(checker(5))
 
 # =====================================================================
 
@@ -49,24 +49,24 @@
 # Creaţi funcţia mediaNumere, care primeşte un parametru de tip listă,
 # şi returnează media numerelor din lista respectivă.
 
-# def med_Listei(x:list):
-#     return sum(x) / len(x)
-#
-# print(med_Listei([1,2,3,4,5]))
+def med_Listei(x:list):
+    return sum(x) / len(x)
+
+print(med_Listei([1,2,3,4,5]))
 # =====================================================================
 
 
 # Exercitiu 4
 # Scrieți o funcție Python care găseşte maximul a trei numere
 
-# def max_3(a,b,c):
-#     max = a
-#     for i in [a,b,c]:
-#         if i > max:
-#             max = i
-#     return max
-#
-# print(max_3(1,2,3))
+def max_3(a,b,c):
+    max = a
+    for i in [a,b,c]:
+        if i > max:
+            max = i
+    return max
+
+print(max_3(1,2,3))
 
 # =====================================================================
 
@@ -74,13 +74,13 @@
 # Exercitiu 5
 # Scrieți o funcție Python care să înmulțească toate numerele dintr-o listă şi să returneze rezultatul
 
-# def mul_all(lista):
-#     res = 1
-#     for i in lista:
-#         res *= i
-#     return res
-#
-# print(mul_all([1,2,6,9]))
+def mul_all(lista):
+    res = 1
+    for i in lista:
+        res *= i
+    return res
+
+print(mul_all([1,2,6,9]))
 
 # =====================================================================
 
@@ -90,11 +90,11 @@
 # dar înainte de aceasta transformă numele să fie scris cu prima literă mare.
 
 #
-# def call(nume):
-#     print(f"salut {nume.capitalize()}")
-#
-# call("Alexandr")
-# print(call("L"))
+def call(nume):
+    print(f"salut {nume.capitalize()}")
+
+call("Alexandr")
+print(call("L"))
 
 
 # =====================================================================
