@@ -185,47 +185,48 @@ stoc = [
 class Comanda:
     def __init__(self, nr_masa):
         self.nr_masa = nr_masa
-        self.orders = {} # produs:cantitate
+        self.orders = {} # produs: cantitate
 
     def adauga_produs(self, produs, cantitate):
         in_stoc = self.is_available(produs, cantitate)
         if not in_stoc:
-            print(f"Stoc insuficient, XXXXXXXXXX")
+            print("stoc insuficient")
             return
-
 
         self.orders[produs] = self.orders.get(produs, 0) + cantitate
         self.actualizeaza_stoc(produs, cantitate)
 
     def is_available(self, produs, cantitate):
         for p in stoc:
-            if p["produs"] == produs:
-                return p["cantitate"] >= cantitate
+            if p['produs'] == produs:
+                return p['cantitate'] >= cantitate
 
     def actualizeaza_stoc(self, produs, cantitate):
         for p in stoc:
-            if p["produs"] == produs:
-                p["cantitate"] -= cantitate
+            if p['produs'] == produs:
+                p['cantitate'] -= cantitate
                 return
 
     def afiseaza_nota(self):
-        total=0
-        res=f"Nota masa {self.nr_masa}:\n"
+        total = 0
+        res = f"Nota masa {self.nr_masa}:\n"
 
         for produs, cantitate in self.orders.items():
             pret = self.afla_pretul(produs) * cantitate
-            res += f"{produs}: x {cantitate}:{pret}lei\n"
-            total+=pret
+            res += f"{produs}: x{cantitate}: {pret}lei\n"
+            total += pret
 
         res += f"Total: {total}\n"
         return res
 
     def afla_pretul(self, produs):
         for p in stoc:
-            if p["produs"] == produs:
-                return p["pret"]
+            if p['produs'] == produs:
+                return p['pret']
+
 
 cmd = Comanda(1)
 cmd.adauga_produs("Pizza Margherita", 2)  # True
-cmd.adauga_produs("Suc", 1)  # True
-print(cmd.adauga_produs("Pizza Margherita", 4))
+cmd.adauga_produs("Suc", 1)               # True
+cmd.adauga_produs("Pizza Margherita", 4)  # False (stoc insuficient)
+print(cmd.afiseaza_nota())
