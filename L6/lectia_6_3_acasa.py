@@ -50,3 +50,51 @@ Creați o listă de vehicule care să includă cel puțin câte un exemplu din f
 clasă (Car, Bicycle, Motorcycle).
 Parcurgeți lista și afișați informațiile pentru fiecare vehicul utilizând metoda get_info().
 """
+
+
+
+class Vehicle:
+    def __init__(self, brand:str, model:str, year:int):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def get_info(self):
+        return f"{self.brand} {self.model}, fabricat în anul {self.year}\n"
+
+class Car(Vehicle):
+    def __init__(self, brand, model, year, fuel_type:str, doors:int):
+        super().__init__(brand, model, year)
+        self.fuel_type = fuel_type
+        self.doors = doors
+
+    def get_info(self):
+        return f"{self.brand} {self.model}, fabricat în anul{self.year},motor {self.fuel_type},cu {self.doors} usi\n"
+
+
+class Bicycle(Vehicle):
+    def __init__(self, brand, model, year, type:str, gear_count:int):
+        super().__init__(brand, model, year)
+        self.type = type
+        self.gear_count = gear_count
+
+    def get_info(self):
+        return f"{self.brand}{self.model}, fabricat în anul{self.year},tip: {self.type} cu numar de viteze: {self.gear_count}\n"
+
+class Motorcycle(Vehicle):
+    def __init__(self, brand, model, year, engine_capacity: int, has_sidecar: bool):
+        super().__init__(brand, model, year)
+        self.engine_capacity = engine_capacity
+        self.has_sidecar = has_sidecar
+
+    def get_info(self):
+        return f"{self.brand} {self.model}, fabricat în anul{self.year},Vol motor: {self.engine_capacity} motocicleta are sau nu ataș: {self.has_sidecar}\n"
+
+v= Vehicle
+masina = Car("Tesla","Model S",2022, "electric", 4)
+bicicleta = Bicycle("Merida","Crossway",2021, "șosea", 21)
+motocicleta= Motorcycle("Honda", "Shadow", 2020, 745, False)
+
+print(masina.get_info())
+print(bicicleta.get_info())
+print(motocicleta.get_info())

@@ -5,6 +5,8 @@
 
 # =====================================================================
 """
+from traceback import print_tb
+
 from encodings.base64_codec import base64_decode
 
 """
@@ -50,60 +52,60 @@ c) Clasa Parrot:
   pentru fiecare
 """
 
-class Animal:
-    def __init__(self, name, age):
-        self.name= name
-        self.age = age
-    def get_name(self):
-        return self.name
-    def speak(self):
-        return "Sunet generic de animal"
-
-
-class Dog(Animal):
-    def __init__(self, name, age, breed, is_guard_dog):
-        super().__init__(name, age)
-        self.breed = breed
-        self.is_guard_dog = is_guard_dog
-
-    def speak(self):
-        return "Ciine"
-
-
-class Cat(Animal):
-    def __init__(self, name, age, color, indoor):
-        super().__init__(name, age)
-        self.color = color
-        self.indoor = indoor
-
-    def speak(self):
-        return "cat"
-
-
-
-class Parrot(Animal):
-    def __init__(self, name, age, can_speak_words, favorite_phrase):
-        super().__init__(name, age)
-        self.can_speak_words = can_speak_words
-        self.favorite_phrase = favorite_phrase
-
-    def speak(self):
-        return "parrot"
-
-
-
-dog = Dog("Rex", 3, "Labrador", True)
-cat = Cat("Mitzi", 2, "portocalie", True)
-parrot = Parrot("Rico", 1, True, "Bună dimineața!")
-
-animals = [dog, cat, parrot]
-
-print("Prezentarea animalelor:")
-print("-" * 50)
-for animal in animals:
-    print(animal.speak())
-    print(f"Nume verificat prin get_name(): {animal.get_name()}")
-    print("-" * 50)
+# class Animal:
+#     def __init__(self, name, age):
+#         self.name= name
+#         self.age = age
+#     def get_name(self):
+#         return self.name
+#     def speak(self):
+#         return "Sunet generic de animal"
+#
+#
+# class Dog(Animal):
+#     def __init__(self, name, age, breed, is_guard_dog):
+#         super().__init__(name, age)
+#         self.breed = breed
+#         self.is_guard_dog = is_guard_dog
+#
+#     def speak(self):
+#         return "Ciine"
+#
+#
+# class Cat(Animal):
+#     def __init__(self, name, age, color, indoor):
+#         super().__init__(name, age)
+#         self.color = color
+#         self.indoor = indoor
+#
+#     def speak(self):
+#         return "cat"
+#
+#
+#
+# class Parrot(Animal):
+#     def __init__(self, name, age, can_speak_words, favorite_phrase):
+#         super().__init__(name, age)
+#         self.can_speak_words = can_speak_words
+#         self.favorite_phrase = favorite_phrase
+#
+#     def speak(self):
+#         return "parrot"
+#
+#
+#
+# dog = Dog("Rex", 3, "Labrador", True)
+# cat = Cat("Mitzi", 2, "portocalie", True)
+# parrot = Parrot("Rico", 1, True, "Bună dimineața!")
+#
+# animals = [dog, cat, parrot]
+#
+# print("Prezentarea animalelor:")
+# print("-" * 50)
+# for animal in animals:
+#     print(animal.speak())
+#     print(f"Nume verificat prin get_name(): {animal.get_name()}")
+#     print("-" * 50)
 
 """=================================================================================================="""
 
@@ -357,43 +359,90 @@ class Developer(Employee):
         details = f"Programming language :{self.programming_language}, projects completed :{self.projects_completed}\n"
         return  base_details + details
 
-
 class Manager(Employee):
-    pass
+    def __init__ (self, name, employee_id, base_salary, years_of_experience, team_size):
+        super().__init__(name, employee_id,base_salary,years_of_experience)
+        self.team_size = team_size
+
+    def add_team_member(self, employee: Developer ):
+        if not isinstance(employee, Developer):
+            print("Nu putem adauga in echipa")
+            return
+        self.team_size += 1
+
+    def calculate_salary(self):
+        base_salary = super().calculate_salary()
+        return base_salary+500*self.team_size
+
+    def get_details(self):
+        base_details =super().get_details()
+        return base_details +f"Marimea echipei: {self.team_size}\n"
 
 class QATester(Employee):
-    pass
+    def __init__(self, name, employee_id, base_salary, years_of_experience, bugs_found):
+        super().__init__(name, employee_id, base_salary, years_of_experience)
+        self.bugs_found = bugs_found
+        self.test_types = []
+
+    def add_test_type(self, test_type):
+        self.test_types.append(test_type)
+
+    def calculate_salary(self):
+        base_salary = super().calculate_salary()
+        return base_salary + 50 * self.bugs_found + 200 * len(self.test_types)
+
+    def get_details(self):
+        base_details = super().get_details()
+        base_details += f"Bugs found: {self.bugs_found}\n"
+        base_details += f"Test types :{self.test_types}\n"
+        return base_details
 
 # Sistem de gestionare a companiei
 class ITCompany:
-    pass
+    def __init__(self, name):
+        self.name = name
+        self.employees = []
 
-# # Test
-# company = ITCompany("TechCorp")
-#
-# # Creăm dezvoltatori
-# dev1 = Developer("Ana Pop", "DEV001", 6000, "Python", 5)
-# dev2 = Developer("Ion Stan", "DEV002", 5500, "Java", 3)
-# dev1.add_experience(3)
-#
-# # Creăm un manager
-# mgr = Manager("Maria Ionescu", "MGR001", 8000, 0)
-# mgr.add_experience(5)
-# mgr.add_team_member(dev1)
-# mgr.add_team_member(dev2)
-#
-# # Creăm un QA tester
-# qa = QATester("Radu Popa", "QA001", 4500, 150)
-# qa.add_test_type("Manual Testing")
-# qa.add_test_type("Automation Testing")
-# qa.add_experience(2)
-#
-# # Adăugăm toți angajații în companie
-# company.add_employee(dev1)
-# company.add_employee(dev2)
-# company.add_employee(mgr)
-# company.add_employee(qa)
-#
-# # Afișăm informațiile
-# company.display_all_employees()
-# print(f"\nTotal salarii de plătit: {company.calculate_total_salary():.2f}")
+    def add_employee(self, employee: Employee):
+        if not isinstance(employee, Employee):
+            return
+        self.employees.append(employee)
+
+    def calculate_total_salary(self):
+        return sum(employee.calculate_salary() for employee in self.employees)
+
+    def get_all_employees(self):
+        all_details = f"Compania {self.name}"
+        for employee in self.employees:
+            all_details += employee.get_details()
+        return all_details
+
+
+company = ITCompany("TechCorp")
+
+# Creăm dezvoltatori
+dev1 = Developer("Ana Pop", "DEV001", 6000, 5, "Python", 5)
+dev2 = Developer("Ion Stan", "DEV002", 5500, 3, "Java", 3)
+dev1.add_experience(3)
+
+# Creăm un manager
+mgr = Manager("Maria Ionescu", "MGR001", 8000, 0, 8)
+mgr.add_experience(5)
+mgr.add_team_member(dev1)
+mgr.add_team_member(dev2)
+
+# Creăm un QA tester
+qa = QATester("Radu Popa", "QA001", 4500, 150, 3)
+qa.add_test_type("Manual Testing")
+qa.add_test_type("Automation Testing")
+qa.add_experience(2)
+
+# Adăugăm toți angajații în companie
+company.add_employee(dev1)
+company.add_employee(dev2)
+company.add_employee(mgr)
+company.add_employee(qa)
+
+# Afișăm informațiile
+print(company.get_all_employees())
+print(f"\nTotal salarii de plătit: {company.calculate_total_salary():.2f}")
